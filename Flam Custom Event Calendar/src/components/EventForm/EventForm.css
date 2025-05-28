@@ -1,0 +1,221 @@
+/* Event Form Styles */
+.event-form-dialog {
+  backdrop-filter: blur(10px);
+}
+
+.event-form-dialog .MuiDialog-paper {
+  background: linear-gradient(135deg, var(--background-light) 0%, #ffffff 100%);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  max-height: 90vh !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.event-form-dialog .MuiDialogTitle-root {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  color: white;
+  padding: 20px 24px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.event-form-dialog .MuiDialogContent-root {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Form Fields */
+.event-form-field {
+  margin-bottom: 20px;
+  transition: var(--transition-normal);
+}
+
+.event-form-field .MuiInputLabel-root {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.event-form-field .MuiOutlinedInput-root {
+  border-radius: var(--border-radius-sm);
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  transition: var(--transition-normal);
+}
+
+.event-form-field .MuiOutlinedInput-root:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.event-form-field .MuiOutlinedInput-root.Mui-focused {
+  background-color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Date and Time Fields Container */
+.datetime-fields {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.datetime-fields .MuiTextField-root {
+  flex: 1;
+}
+
+/* Recurrence Section */
+.recurrence-section {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.recurrence-section .MuiFormControl-root {
+  width: 100%;
+}
+
+/* Custom Recurrence Form */
+.custom-recurrence {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: var(--border-radius-md);
+  border: 1px solid rgba(25, 118, 210, 0.1);
+  backdrop-filter: blur(4px);
+}
+
+.interval-select {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.weekday-select {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.month-days {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.month-day-chip {
+  transition: var(--transition-normal) !important;
+}
+
+.month-day-chip:hover {
+  transform: translateY(-2px);
+}
+
+.month-day-chip.selected {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Form Actions */
+.event-form-actions {
+  padding: 16px 24px;
+  background-color: rgba(0, 0, 0, 0.02);
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.event-form-actions .MuiButton-root {
+  min-width: 100px;
+  border-radius: var(--border-radius-sm);
+  text-transform: none;
+  font-weight: 500;
+  transition: var(--transition-normal);
+}
+
+.event-form-actions .MuiButton-contained {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  box-shadow: var(--shadow-sm);
+}
+
+.event-form-actions .MuiButton-contained:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Alert Styles */
+.event-form-alert {
+  margin-bottom: 20px;
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .event-form-dialog .MuiDialogTitle-root {
+    padding: 16px 20px;
+    font-size: 1.25rem;
+  }
+
+  .event-form-dialog .MuiDialogContent-root {
+    padding: 20px;
+  }
+
+  .datetime-fields {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .weekday-select {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .month-days {
+    grid-template-columns: repeat(auto-fill, minmax(36px, 1fr));
+    gap: 6px;
+  }
+
+  .event-form-actions {
+    padding: 12px 20px;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .event-form-dialog .MuiDialog-paper {
+    background: linear-gradient(135deg, rgba(18, 18, 18, 0.95), rgba(30, 30, 30, 0.95));
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .event-form-field .MuiOutlinedInput-root {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .event-form-field .MuiOutlinedInput-root:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .event-form-field .MuiOutlinedInput-root.Mui-focused {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .custom-recurrence {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .event-form-actions {
+    background-color: rgba(255, 255, 255, 0.02);
+  }
+} 
